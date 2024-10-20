@@ -259,7 +259,7 @@ async def fetch_all_asins(asins, max_concurrent=100):
 
 
 if __name__ == "__main__":
-    asins_sample = asins[720:800]
+    asins_sample = asins[:100] # This will scrape just first 100 asins if you wanna scrape 1600 remove "[:100]" this but scraping a lot will cause IP Bans
     results = asyncio.run(fetch_all_asins(asins_sample, max_concurrent=50))
     df_results = pd.DataFrame(results)
     print(df_results)
